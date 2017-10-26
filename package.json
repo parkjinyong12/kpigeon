@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "kpigeon",
   "version": "0.0.1",
   "description": "",
   "main": "app.js",
@@ -13,4 +13,3 @@
     "express": "^4.16.2"
   }
 }
-
