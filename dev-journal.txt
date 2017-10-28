@@ -1,0 +1,7 @@
+2017.10.28
+1. goal
+a front stage setting using Angular.js
+2. time : 2hour
+
+
+
