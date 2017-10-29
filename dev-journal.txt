@@ -4,6 +4,12 @@ a front stage setting using Angular.js
 2. time : 2hour
 3. result : github-desktop synchronization
 
+2017.10.29
+1. goal
+a front stage setting using Angular.js
+2. time : 2hour
+
+
 
 
 
