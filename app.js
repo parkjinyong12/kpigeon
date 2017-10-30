@@ -5,27 +5,10 @@ var http = require('http');
 var app = express();
 var router = express.Router();
 
-/*라운팅 함수 등록*/
-router.route('/process').get(function(req,res) {
-    console.log('welcome'); 
-    
-    var paramId2 = 'methere';
-    var username = 'Jade';
-    
-    context={userid:paramId2,username:username};
-    
-    req.app.render('login_success',context,function(err, html) {
-        
-        if (err) {
-            console.error('error : ' + err.stack);
-        } else {
-            console.log('rendered : ' + html);            
-        }
-        
-        res.end(html);
-    });
-});
-                      
+var index = require('./routes/index');
+
+index.route(app,router);
+                     
 app.use('/',router);
 
 app.set('port',process.env.PORT || 3000);
