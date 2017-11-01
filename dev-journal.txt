@@ -16,6 +16,12 @@ How to use .jade > npm install jade
 2. time : 2hour
 3. result : How to use git. more..
 
+2017.10.29
+1. goal
+clean source not to use. planning to make a framework.
+2. time : 1hour 30 minutes
+
+
 
 
 
