@@ -1,0 +1,25 @@
+html(ng-app="myApp")
+head
+script(src='/js/angular.min.js')
+link(rel="stylesheet" href="/css/style.css")
+body(ng-controller="myController")
+h1 Hello Plunker!
+script.
+  var friends = [
+    {name:'John', phone:'555-1276'},
+    {name:'Mary', phone:'800-BIG-MARY'},
+    {name:'Mike', phone:'555-4321'},
+    {name:'Adam', phone:'555-5678'},
+    {name:'Julie', phone:'555-8765'},
+    {name:'Juliette', phone:'555-5678'}
+  ];
+
+    var app = angular.module('myApp', []);
+
+    app.controller('myController', ['$scope', '$window', function($scope, $window) {
+        $scope.friendsInscope = $window.friends;
+    }]);
+
+div(ng-init="friends=friendsInscope") {{friends||json}}
+    
+h1 #{title}
