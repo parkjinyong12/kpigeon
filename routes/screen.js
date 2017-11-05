@@ -8,9 +8,11 @@ Screen.route = function() {
   router.get('/main',function(req,res) {
     res.render('main', { title: 'Express' })
   });
+  router.get('/sub',function(req,res) {
+    res.sendFile(path.join(__dirname,'../views/sub.html'))
+  });
   return router;
 }
-
 
 module.exports = Screen;
 
