@@ -20,6 +20,15 @@ How to use .jade > npm install jade
 1. goal
 clean source not to use. planning to make a framework.
 2. time : 1hour 30 minutes
+3. synchronization. Angular with Jade 
+
+2017.11.06
+1. goal
+-
+2. time 2hour
+3. synchronization. Jade with Bootstrap
+
+
 
 
 
