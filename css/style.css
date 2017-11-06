@@ -21,3 +21,22 @@ video {
   background-size: cover;
   transition: 1s opacity;
 } 
+
+body {
+  position: absolute;  
+}
+.map_frame {
+  position: relative;
+  top: 0px;
+  left: 0px;  
+  border: 1px solid red;  
+}
+
+img.seoul_spot {
+  position: absolute;   
+  top: 134px;
+  left: 168px;
+  /* top: 19%;
+  left: 29%; */
+  width: 30px;
+}
