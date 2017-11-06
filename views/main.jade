@@ -15,6 +15,20 @@ html(lang='en')
         // Custom styles for this template
         link(href='../css/navbar.css', rel='stylesheet')
         link(href='../css/style.css', rel='stylesheet')
+
+        script.
+            $(document).ready(function() {
+                $("#spot_seoul").hover(function() {
+                    $(this).attr('src','/image/heart_spot_small_on.png');                    
+                },function() {
+                    $(this).attr('src','/image/heart_spot_small.png');
+                });
+
+                $("#spot_seoul").on('click',function() {
+                    alert(1);
+                });                 
+            });
+            
     body        
         .container.theme-showcase(role="main")
             // Static navbar

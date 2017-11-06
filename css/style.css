@@ -31,6 +31,10 @@ body {
   left: 0px;    
 }
 
+img.korea_map {
+  border: 1px solid #828282;
+}
+
 img.seoul_spot {
   position: absolute;   
   top: 134px;
