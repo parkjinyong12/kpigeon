@@ -28,15 +28,12 @@ body {
 .map_frame {
   position: relative;
   top: 0px;
-  left: 0px;  
-  border: 1px solid red;  
+  left: 0px;    
 }
 
 img.seoul_spot {
   position: absolute;   
   top: 134px;
-  left: 168px;
-  /* top: 19%;
-  left: 29%; */
+  left: 168px;  
   width: 30px;
 }
