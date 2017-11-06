@@ -15,6 +15,8 @@ app.set('views',path.join(__dirname,'/views'));
 /* Resources */
 app.use('/js',express.static(path.join(__dirname,'/js')));
 app.use('/css',express.static(path.join(__dirname,'/css')));
+app.use('/video',express.static(path.join(__dirname,'/source/video')));
+app.use('/image',express.static(path.join(__dirname,'/source/image')));
 
 /* Process */
 app.use('/screen',screen.route());

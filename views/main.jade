@@ -15,12 +15,8 @@ html(lang='en')
         // Custom styles for this template
         link(href='../css/navbar.css', rel='stylesheet')
         link(href='../css/style.css', rel='stylesheet')
-    body
-        video#bgvid(poster='https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg', playsinline='', autoplay='', muted='', loop='')
-            // WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
-            source(src='http://thenewcode.com/assets/videos/polina.webm', type='video/webm')
-            source(src='http://thenewcode.com/assets/videos/polina.mp4', type='video/mp4')
-        .container
+    body        
+        .container.theme-showcase(role="main")
             // Static navbar
             nav.navbar.navbar-default
                 .container-fluid
@@ -62,14 +58,11 @@ html(lang='en')
                             li
                                 a(href='../navbar-static-top/') Static top                          
                             li
-                                a(href='../navbar-fixed-top/') Fixed top
-              
-            // Main component for a primary marketing message or call to action
-            .jumbotron
-                h1 Navbar example                     
-                p This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.                  
-                p
-                    a.btn.btn-lg.btn-primary(href='../../components/#navbar', role='button') View navbar docs »
+                                a(href='../navbar-fixed-top/') Fixed top           
+            
+            div.map_frame
+                img.korea_map(src='/image/koreamap_gray3.png', alt='A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera')
+                img.seoul_spot(id='spot_seoul' src='/image/heart_spot_small.png', alt='Seoul')
         
         include footer
 
