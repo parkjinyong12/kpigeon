@@ -26,7 +26,17 @@ html(lang='en')
 
                 $("#spot_seoul").on('click',function() {
                     alert(1);
-                });                 
+                });
+
+                $(".nav.navbar-nav li").hover(function() {
+                    $(this).addClass('active');
+                },function() {                    
+                    $(this).removeClass('active');
+                })
+                $(".nav.navbar-nav li").on('click',function() {
+                    //$(".nav.navbar-nav li").removeClass('active');
+                    $(this).addClass('active');
+                });                   
             });
             
     body        
@@ -43,12 +53,12 @@ html(lang='en')
                         a.navbar-brand(href='#') Korean Pigeon
                     #navbar.navbar-collapse.collapse
                         ul.nav.navbar-nav
-                            li.active
-                                a(href='#') Home
                             li
-                                a(href='#') About
+                                a(href='#') Transfer
                             li
-                                a(href='#') Contact
+                                a(href='#') Travel
+                            li
+                                a(href='#') Accommodation
                             li.dropdown
                                 a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Dropdown                                  
                                   span.caret                              
