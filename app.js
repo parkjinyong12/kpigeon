@@ -11,12 +11,13 @@ var app = express();
 app.set('port',process.env.PORT || 3000);
 app.set('view engine','jade');
 app.set('views',path.join(__dirname,'/views'));
+app.locals.basedir = app.get('views');
 
 /* Resources */
-app.use('/js',express.static(path.join(__dirname,'/js')));
-app.use('/css',express.static(path.join(__dirname,'/css')));
-app.use('/video',express.static(path.join(__dirname,'/source/video')));
-app.use('/image',express.static(path.join(__dirname,'/source/image')));
+app.use('/js',express.static(path.join(__dirname,'/public/js')));
+app.use('/css',express.static(path.join(__dirname,'/public/css')));
+app.use('/video',express.static(path.join(__dirname,'/public/video')));
+app.use('/image',express.static(path.join(__dirname,'/public/image')));
 
 /* Process */
 app.use('/screen',screen.route());
