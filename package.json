@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "npm run scss-compile",
-    "scss-compile": "node-sass -rw ./sass/ -o ./css/",
+    "scss-compile": "node-sass -o public/css sass",
     "watch": "npm run scss-compile"
   },
   "author": "Jade",
@@ -14,11 +14,8 @@
     "bootstrap": "^3.3.7",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
     "jade": "^1.11.0",
     "node-sass": "^4.6.1",
-    "sass-watch": "^0.1.0",
     "typescript": "^2.5.3"
   }
 }

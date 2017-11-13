@@ -17,7 +17,8 @@ app.locals.basedir = app.get('views');
 app.use('/js',express.static(path.join(__dirname,'/public/js')));
 app.use('/css',express.static(path.join(__dirname,'/public/css')));
 app.use('/video',express.static(path.join(__dirname,'/public/video')));
-app.use('/image',express.static(path.join(__dirname,'/public/image')));
+app.use('/img',express.static(path.join(__dirname,'/public/image')));
+app.use('/sass',express.static(path.join(__dirname,'/sass')));
 
 /* Process */
 app.use('/screen',screen.route());
