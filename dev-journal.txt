@@ -34,6 +34,12 @@ homepage UI/UX. thinking..
 2. time : 1hour
 3. apply background video to homepage.
 
+2017.11.20
+1. goal
+-
+2. time : 4hour
+3. boostrap operating principle analysis
+
 
 
 
