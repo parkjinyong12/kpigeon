@@ -38,7 +38,7 @@ homepage UI/UX. thinking..
 1. goal
 -
 2. time : 4hour
-3. boostrap operating principle analysis
+3. boostrap operating principle analysis. and adjust sample code to the homepage.
 
 
 
