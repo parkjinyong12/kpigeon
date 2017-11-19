@@ -5,13 +5,14 @@
   "main": "app.js",
   "scripts": {
     "test": "npm run scss-compile",
-    "scss-compile": "node-sass -o public/css sass",
+    "scss-compile": "node-sass -o public/css sass --include-path node_modules/bootstrap-sass/assets/stylesheets/",
     "watch": "npm run scss-compile"
   },
   "author": "Jade",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "jade": "^1.11.0",

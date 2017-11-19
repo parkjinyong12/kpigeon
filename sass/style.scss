@@ -1,2 +1,119 @@
-@import "/css/bootstrap/bootstrap.css";
+@import "bootstrap";
+
+/******************* 
+    header
+********************/
+h1 {    
+    @media screen {
+        margin-top: 2%;
+       // margin-top: 11px;
+    }
+    @media (min-width: 768px) {
+        //margin-top: 8px;
+    }
+    @media (min-width: 992px) {
+        //margin-top: 10px;
+    }
+    @media (min-width: 1200px) {
+        //margin-top: 11px;
+    }
+}
+
+.navbar {
+    min-height: 30px;
+    @media screen {
+        margin-bottom: 10px;
+    }
+    @media (min-width: 768px) {
+        
+    }
+}
+
+.navbar-brand {
+    @media screen {
+        padding: 14px 15px 3px;
+        font-size: 26px;    
+        height: 35px;
+    }
+    @media (min-width: 768px) {
+        padding: 7px 15px 3px;
+        font-size: 18px;    
+        height: 35px;
+    }    
+}
+
+.navbar-nav {
+    ul {
+        margin: 0px auto;
+    }
+    li > a {
+        padding-top: 7px;
+        padding-bottom: 8px;
+    }
+}
+
+.dropdown-menu .divider {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/******************* 
+    lang
+********************/
+.lang span {
+    width: 70px;
+    display: inline-block;
+    //border: 1px solid red;
+    margin: 0 5px 0 0;
+}
+
+/******************* 
+    body
+********************/
+.main {
+    @media (min-width: 1280px) {
+        width: 1280px;
+        margin-left: auto;        
+        margin-right: auto;        
+    }
+    //border: 1px solid red;
+}
+
+.korea-map {
+    position: relative;
+    @media (min-width: 1433px) {
+        width: 600px;        
+    }
+    .city-spot {
+        position: absolute;        
+    }
+    .seoul {
+        @extend .city-spot;
+        top: 19.5%;
+        left: 28.9%;
+        @media (min-width:727px) and (max-width: 767px) {
+            left: 193px;            
+        }        
+        //top: 153px;
+        //left: 198px;
+        width: 30px;
+        height: 30px;
+        //border: 1px solid red;        
+    }
+}
+
+.aaa11 {
+    //border: 1px solid red;
+}
+
+/******************* 
+    offset
+********************/
+.col-sm-offset-_5 {
+    margin-left: 4.16666%; 
+}
+
+.col-md-offset-_5 {
+    margin-left: 4.16666%; 
+}
 

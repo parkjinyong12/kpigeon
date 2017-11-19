@@ -5,16 +5,9 @@ html(lang='en')
         meta(http-equiv='X-UA-Compatible', content='IE=edge')        
         meta(name='viewport', content='width=device-width, initial-scale=1')
         // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
-        style(type='text/css').
-            .aaa {
-                background-color: black;
-                margin: 0;
-                padding: 0;
-
-            }
+       
         title K-Pigeon        
-        include /common/header
-        
+        include /common/header        
     
     body
         nav.navbar.navbar-inverse
@@ -31,19 +24,19 @@ html(lang='en')
                 #bs-example-navbar-collapse-1.collapse.navbar-collapse
                     ul.nav.navbar-nav
                         li.dropdown
-                            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Travel 
+                            a.dropdown-toggle.travel(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Travel 
                                 span.caret                                       
                             ul.dropdown-menu  
                                 li
                                     a(href='#') Action                            
                         li.dropdown
-                            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Transportaion 
+                            a.dropdown-toggle.seesight(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Seesight 
                                 span.caret                                       
                             ul.dropdown-menu
                                 li
                                     a(href='#') Action                              
                         li.dropdown
-                            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Accommodation
+                            a.dropdown-toggle.culture(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Culture
                                 span.caret                                       
                             ul.dropdown-menu
                                 li
@@ -58,7 +51,7 @@ html(lang='en')
                                 li.divider(role='separator')
                                 li
                                     a(href='#') One more separated link                    
-                    form.navbar-form.navbar-left
+                    //form.navbar-form.navbar-left
                         .form-group
                             input.form-control(type='text', placeholder='Search')                                
                         button.btn.btn-default(type='submit') Submit
@@ -67,21 +60,83 @@ html(lang='en')
                         li
                             a(href='#') Link
                         li.dropdown
-                            a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') language 
+                            a.lang-body.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') language 
                                 span.caret                            
                             ul.dropdown-menu
+                                li                                    
+                                    a.lang(href='#' style='display:inline-block;') 
+                                        span Korean
+                                        img(src='/img/heart_spot_small_on.png',style="width:30px;")
+                                li                                  
+                                    a.lang(href='#' style='display:inline-block;') 
+                                        span English
+                                        img(src='/img/heart_spot_small_on.png',style="width:30px;")
+                                li                                    
+                                    a.lang(href='#' style='display:inline-block;') 
+                                        span Chinese
+                                        img(src='/img/heart_spot_small_on.png',style="width:30px;")
                                 li
-                                    img(src='/img/heart_spot_small_on.png',style="height:100%")
-                                    a(href='#' style='display:inline-block;') Korean 
-                                li
-                                    img(src='/img/heart_spot_small_on.png',style="height:100%")
-                                    a(href='#' style='display:inline-block;') English
-                                li
-                                    img(src='/img/heart_spot_small_on.png',style="height:100%")
-                                    a(href='#' style='display:inline-block;') Chinese                                
-                                li
-                                    img(src='/img/heart_spot_small_on.png',style="height:100%")
-                                    a(href='#' style='display:inline-block;') Japanes
-                          
+                                    a.lang(href='#' style='display:inline-block;') 
+                                        span Japanese
+                                        img(src='/img/heart_spot_small_on.png',style="width:30px;")
+        .container-fluid.main
+            .row
+                .col-sm-5.col-md-5.col-sm-offset-_5.col-md-offset-_5.korea-map                     
+                    img.img-responsive(src='/img/koreamap_gray2.png', width='649' alt='Generic placeholder thumbnail')
+                    img.city-spot.seoul(src='/img/heart_spot_small.png')
+
+                .col-sm-5.col-md-5
+                    h1 Seoul
+                    .row.placeholder
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label                            
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label
+                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
+                            span.text-muted Something else
+                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                            h4 Label
+                        
+                            
+
+
+            
+
 
         include /common/footer

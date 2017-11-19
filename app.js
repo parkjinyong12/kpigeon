@@ -3,6 +3,7 @@ var http = require('http');
 var express = require('express');
 var path = require('path');
 
+
 /* Setting */
 var screen = require('./routes/screen');
 var service = require('./routes/service');
@@ -18,7 +19,7 @@ app.use('/js',express.static(path.join(__dirname,'/public/js')));
 app.use('/css',express.static(path.join(__dirname,'/public/css')));
 app.use('/video',express.static(path.join(__dirname,'/public/video')));
 app.use('/img',express.static(path.join(__dirname,'/public/image')));
-app.use('/sass',express.static(path.join(__dirname,'/sass')));
+
 
 /* Process */
 app.use('/screen',screen.route());

@@ -1,5 +1,18 @@
 $(document).ready(function() {
-    $(".transport").hover(function() {
+
+    // city
+    $(".city-spot").hover(function() {
+        $(this).attr('src','/img/heart_spot_small_on_2.png');
+    },function() {
+        $(this).attr('src','/img/heart_spot_small.png');
+    });
+
+    // lang
+    $(".lang").click(function() {
+        $(".lang-body").html($(this).find("span").html());
+    });
+
+    $(".travel").hover(function() {
         $('body').css('backgroundColor','yellow');
     },function() {
         $('body').css('backgroundColor','white');
