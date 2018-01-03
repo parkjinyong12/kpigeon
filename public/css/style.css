@@ -5814,6 +5814,13 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+@media (min-width: 320px) {
+  .col-sm-5 {
+    width: 47.6666%; } }
+
+.container-fluid.main {
+  background-image: url("/img/back_ground_2.png"); }
+
 /******************* 
     header
 ********************/
@@ -5868,6 +5875,7 @@ button.close {
     margin-right: auto; } }
 
 .korea-map {
+  boder: 3px solid #a39dc0;
   position: relative; }
   @media (min-width: 1433px) {
     .korea-map {
@@ -5882,6 +5890,22 @@ button.close {
     @media (min-width: 727px) and (max-width: 767px) {
       .korea-map .seoul {
         left: 193px; } }
+
+.city-main-board {
+  font-size: 80%; }
+  .city-main-board .overtext h4 {
+    white-space: nowrap;
+    overflow: hidden; }
+  .city-main-board h4 {
+    font-size: 160%; }
+  @media (max-width: 568px) {
+    .city-main-board .col-sm-4 {
+      width: 48.7777%; } }
+
+.row.placeholder {
+  margin-bottom: 15px; }
+  .row.placeholder :first-child {
+    margin-top: 0; }
 
 /******************* 
     offset

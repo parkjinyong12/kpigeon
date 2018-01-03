@@ -7,7 +7,10 @@ html(lang='en')
         // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
        
         title K-Pigeon        
-        include /common/header        
+        include /common/header 
+
+        link(href='/css/style.css', rel='stylesheet')
+        script(src='/js/views/main.js')       
     
     body
         nav.navbar.navbar-inverse
@@ -83,60 +86,62 @@ html(lang='en')
             .row
                 .col-sm-5.col-md-5.col-sm-offset-_5.col-md-offset-_5.korea-map                     
                     img.img-responsive(src='/img/koreamap_gray2.png', width='649' alt='Generic placeholder thumbnail')
-                    img.city-spot.seoul(src='/img/heart_spot_small.png')
+                    img.city-spot.seoul(src='/img/heart_spot_small.png')     
+                    div(style="width:200px;height:100px;background-color:yellow;")               
 
-                .col-sm-5.col-md-5
+                .col-sm-5.col-md-5.city-main-board
                     h1 Seoul
-                    .row.placeholder
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label                            
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label
-                        .col-xs-4.col-sm-4.col-sm-4.placeholder.aaa11
-                            span.text-muted Something else
-                            img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
-                            h4 Label
-                        
-                            
-
-
-            
+                                        
+                    .col-xs-4.col-sm-4.col-sm-4.placeholder
+                        h4 Seoul Tower
+                        img.img-responsive(src='/img/s_seoulTower.png', width='200', height='200', alt='Seoul_Tower')
+                        span.text-muted Roof of Seoul. Beatifule Views.
+                     
+                    .col-xs-4.col-sm-4.col-sm-4.placeholder.overtext
+                        h4 Cheonggye Cheon 
+                        img.img-responsive(src='/img/s_cheonggyecheon.png', width='200', height='200', alt='Cheonggye_Cheon')
+                        span.text-muted Removed the roads built on the riverside and established a new space                        
+                       
+                    .col-xs-4.col-sm-4.col-sm-4.placeholder
+                        h4 Label                            
+                        img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                        span.text-muted Something else
+                    .row.placeholder    
+                    .col-xs-4.col-sm-4.col-sm-4.placeholder
+                        h4 Label                            
+                        img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                        span.text-muted Something else
+                      
+                    .col-xs-4.col-sm-4.col-sm-4.placeholder
+                        h4 Label                            
+                        img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                        span.text-muted Something else
+                   
+                    .col-xs-4.col-sm-4.col-sm-4.placeholder
+                        h4 Label                            
+                        img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                        span.text-muted Something else
+                    .row.placeholder    
+                    .col-xs-4.col-sm-4.col-sm-4.placeholder
+                        h4 Label                            
+                        img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                        span.text-muted Something else
+                    
+                    .col-xs-4.col-sm-4.col-sm-4.placeholder
+                        h4 Label                            
+                        img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                        span.text-muted Something else
+                   
+                    .col-xs-4.col-sm-4.col-sm-4.placeholder
+                        h4 Label                            
+                        img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                        span.text-muted Something else
+                    .row.placeholder    
+                    .col-xs-4.col-sm-4.col-sm-4.placeholder
+                        h4 Label                            
+                        img.img-responsive(src='data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==', width='200', height='200', alt='Generic placeholder thumbnail')
+                        span.text-muted Something else  
+                           
 
 
         include /common/footer

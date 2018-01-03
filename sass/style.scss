@@ -1,5 +1,14 @@
 @import "bootstrap";
 
+.col-sm-5 {
+    @media (min-width: 320px) {
+        width: 47.6666%;
+    }    
+}
+
+.container-fluid.main {
+    background-image: url("/img/back_ground_2.png")
+}
 /******************* 
     header
 ********************/
@@ -80,6 +89,8 @@ h1 {
 }
 
 .korea-map {
+    boder: 3px solid #a39dc0;
+
     position: relative;
     @media (min-width: 1433px) {
         width: 600px;        
@@ -102,8 +113,32 @@ h1 {
     }
 }
 
-.aaa11 {
-    //border: 1px solid red;
+.city-main-board {    
+    font-size: 80%;
+    .overtext {
+        h4 {
+            //text-overflow: ellipsis;             
+            white-space:nowrap;            
+            overflow: hidden;            
+        }       
+    }
+    h4 {
+        font-size: 160%;
+        
+    }
+    //
+    .col-sm-4 {
+        @media (max-width: 568px) {
+            width: 48.7777%;        
+        }   
+    }    
+}
+
+.row.placeholder {    
+    margin-bottom: 15px;
+    :first-child {    
+        margin-top: 0;        
+    }
 }
 
 /******************* 
