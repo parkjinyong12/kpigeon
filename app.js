@@ -11,7 +11,7 @@ var app = express();
 //var screen = require('./business/screen');
 var bitcoin = require('./business/bitcoin');
 
-app.set('port',process.env.PORT || 3000);
+app.set('port',process.env.PORT || 23000);
 app.set('view engine','jade');
 app.set('views',path.join(__dirname,'/views'));
 app.locals.basedir = app.get('views');

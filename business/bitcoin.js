@@ -37,9 +37,10 @@ Bitcoin.route = function() {
     ];   
 
     async.series(tasks, function(err, results) {
-        console.log(results);
-        res.send('');
+        console.log(results);        
     });
+
+    res.send('');
     
   });
   return router;
