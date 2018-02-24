@@ -40,7 +40,7 @@ Bitcoin.route = function() {
         console.log(results);        
     });
 
-    res.send('');
+    res.send(200,'success');
     
   });
   return router;
