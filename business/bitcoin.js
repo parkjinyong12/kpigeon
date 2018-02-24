@@ -23,9 +23,8 @@ Bitcoin.route = function() {
             });
         },
         function(callback) {
-            pool.getConnection(function(err,connection){
-                var date = new Date();    
-                var query = connection.query('insert into price_history (coin_type, price, reg_date) values (?, ?, ?)',['ETH',closing_price,date.toFormat('YYYYMMDDHH24MISS')],function (err, result) {
+            pool.getConnection(function(err,connection){                 
+                var query = connection.query('insert into price_history (coin_type, price) values (?, ?)',['ETH',closing_price],function (err, result) {
                     if (err) {
                         console.error(err);    
                         throw err;  
