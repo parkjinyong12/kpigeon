@@ -20,6 +20,7 @@ Bitcoin.route = function() {
             request.get(url, function(err, res, result) {
                 console.log("closing_price : " + JSON.parse(result).data.closing_price);   
                 closing_price = JSON.parse(result).data.closing_price;
+                coin_type=coin_type;
                 callback(null);
             });
         },
