@@ -16,15 +16,14 @@ Bitcoin.route = function() {
     var orin_data = {};
     orin_data.url= 'https://api.bithumb.com/public/ticker/';
     orin_data.coin_type = coin_type;
-    console.log(orin_data.url);
     
     var tasks = [        
         function(callback) {            
             url=orin_data.url+orin_data.coin_type;
             console.log('url : ' + url);
             request.get(url, function(err, res, result) {
-                console.log("closing_price : " + JSON.parse(result).data.closing_price);   
-                closing_price = JSON.parse(result).data.closing_price;               
+                var closing_price = JSON.parse(result).data.closing_price;                
+                console.log("closing_price : " + closing_price);                                  
                 next_data={};
                 next_data.type=orin_data.coin_type; 
                 next_data.price=closing_price;     
@@ -35,10 +34,12 @@ Bitcoin.route = function() {
             pool.getConnection(function(err,connection){                 
                 var query = connection.query('insert into price_history (coin_type, price) values (?, ?)',[next_data.type,next_data.price],function (err, result) {
                     if (err) {
+                        connection.release();
                         console.error(err);    
                         throw err;  
-                    }    
-                    console.log(query);            
+                    }                        
+                    connection.release();
+                    //console.log(query);            
                 });
             });        
         }
