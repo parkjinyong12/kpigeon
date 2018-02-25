@@ -13,18 +13,19 @@ Bitcoin.route = function() {
     coin_type=req.query.coin;
     var pool = mysql.getPool();
 
-    var orin_data = [];
-    orin_data.url = "https://api.bithumb.com/public/ticker/";
+    var orin_data = {};
+    orin_data.url= 'https://api.bithumb.com/public/ticker/';
     orin_data.coin_type = coin_type;
-
+    console.log(orin_data.url);
+    
     var tasks = [        
-        function(orin_data,callback) {            
+        function(callback) {            
             url=orin_data.url+orin_data.coin_type;
+            console.log('url : ' + url);
             request.get(url, function(err, res, result) {
                 console.log("closing_price : " + JSON.parse(result).data.closing_price);   
-                closing_price = JSON.parse(result).data.closing_price;
-               
-                next_data=[];
+                closing_price = JSON.parse(result).data.closing_price;               
+                next_data={};
                 next_data.type=orin_data.coin_type; 
                 next_data.price=closing_price;     
                 callback(null,next_data);
