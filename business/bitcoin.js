@@ -25,7 +25,7 @@ Bitcoin.route = function() {
         },
         function(callback) {
             pool.getConnection(function(err,connection){                 
-                var query = connection.query('insert into price_history (coin_type, price) values (?, ?)',['ETH',closing_price],function (err, result) {
+                var query = connection.query('insert into price_history (coin_type, price) values (?, ?)',[coin_type,closing_price],function (err, result) {
                     if (err) {
                         console.error(err);    
                         throw err;  
