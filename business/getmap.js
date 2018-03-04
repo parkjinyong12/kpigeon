@@ -1,7 +1,5 @@
 var GetMap = {}
 
-require('date-utils');
-var bithumb = require('./bithumb');
 var express = require('express');
 var request = require("request");
 var async = require('async');
@@ -11,8 +9,6 @@ var router = express.Router();
 
 GetMap.route = function() {  
     router.get('/marker',function(req,res) {
-
-        
         console.log(2);
         var pool = mysql.getPool();  
         console.log(req);  
