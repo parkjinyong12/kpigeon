@@ -12,7 +12,8 @@ Screen.route = function() {
     res.render('main/base', { title: 'Express' })
   });
   router.get('/sub',function(req,res) {
-    res.sendFile(path.join(__dirname,'/views/sub/sub.html'))
+    //res.sendFile(path.join(__dirname,'/views/sub/sub.html'))
+    res.sendFile(path.join(__dirname,'../views/sub/googleMapTest.html'))
   });
   return router;
 }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 768px;
+        width: 1024px;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+       
+        
+
+        function initMap() {
+            var uluru = {lat: 37.5655, lng: 126.9780};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+            google.maps.event.addListener(map, 'click', function(event) {
+                placeMarker(map,event.latLng);
+                alert(event.latLng);
+            });
+            google.maps.event.addListener(map, 'idle', function(event){
+                httpRequest = new XMLHttpRequest();
+                var bounds = map.getBounds();
+                console.log(bounds);
+                var lats = bounds.f;
+                var lngs = bounds.b; 
+                console.log(lats);
+                console.log(lngs);
+                url = 'http://localhost:23000/getmap/marker'
+                //url = 'http://localhost:23000/getmap/marker?minlat='+ lats.b +'&maxlat='+lats.f+'&minlng='+lngs.b+'&maxlng='+lngs.f+'/'                   
+                console.log(url);
+                httpRequest.open('POST',url, true);
+                httpRequest.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+                //httpRequest.setRequestHeader('Access-Control-Allow-Origin','*');
+                //httpRequest.setRequestHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+                //httpRequest.setRequestHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With');
+                httpRequest.send(lats);
+            });
+            google.maps.event.addListener(map,'zoom_changed',function(event) {
+                var bounds = map.getBounds();
+                var startPoint = bounds.getNorthEast();
+                var endPoint = bounds.getSouthWest();                
+                //alert('zoom '+startPoint+' '+endPoint);
+            });            
+        }        
+        function placeMarker(map,location) {
+            var marker = new google.maps.Marker({
+                position: location, 
+                map: map
+            });            
+        }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf3bmtGtC7RA_OERoqrSdKzLjmv-ZDHVk&callback=initMap">
+    </script>
+  </body>
+</html>
