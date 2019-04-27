@@ -2,7 +2,8 @@
 var http = require('http');
 var express = require('express');
 var path = require('path');
-
+var bodyParser = require('body-parser');
+var multer = require('multer');
 var app = express();
 
 app.set('port',process.env.PORT || 23000);
@@ -10,6 +11,13 @@ app.set('view engine','jade');
 app.set('views',path.join(__dirname,'/views'));
 app.locals.basedir = app.get('views');
 
+// parse application/x-www-form-urlencoded
+//app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(multer());
 /*
 app.all('/*', function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
