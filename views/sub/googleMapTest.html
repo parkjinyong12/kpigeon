@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       #map {
+        height: 768px;
+        width: 1024px;
+       }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+        function initMap() {
+            var uluru = {lat: 37.5655, lng: 126.9780};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: uluru
+            });
+            var marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+            google.maps.event.addListener(map, 'click', function(event) {
+                placeMarker(map,event.latLng);
+                alert(event.latLng);
+            });
+            google.maps.event.addListener(map, 'idle', function(event){
+                xhr = new XMLHttpRequest();
+                var bounds = map.getBounds();
+                console.log(bounds);
+                var lats = bounds.f;
+                var lngs = bounds.b; 
+                console.log(lats);
+                console.log(lngs);
+                url = '/getmap/marker'                                  
+                console.log(url);
+                xhr.open('POST',url, true);
+                xhr.send(JSON.stringify(lats));
+            });
+            google.maps.event.addListener(map,'zoom_changed',function(event) {
+                var bounds = map.getBounds();
+                var startPoint = bounds.getNorthEast();
+                var endPoint = bounds.getSouthWest();                
+                //alert('zoom '+startPoint+' '+endPoint);
+            });            
+        }        
+        function placeMarker(map,location) {
+            var marker = new google.maps.Marker({
+                position: location, 
+                map: map
+            });            
+        }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf3bmtGtC7RA_OERoqrSdKzLjmv-ZDHVk&callback=initMap">
+    </script>
+  </body>
+</html>
