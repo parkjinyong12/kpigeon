@@ -27,23 +27,22 @@
                 alert(event.latLng);
             });
             google.maps.event.addListener(map, 'idle', function(event){
+                
+                url = '/getmap/marker'
                 xhr = new XMLHttpRequest();
                 var bounds = map.getBounds();
-                console.log(bounds);
+               
+                //TODO from googleMap.html to getmap.js through url(/getmap/marker)
                 var lats = bounds.f;
-                var lngs = bounds.b; 
-                console.log(lats);
-                console.log(lngs);
-                url = '/getmap/marker'                                  
-                console.log(url);
+                var lngs = bounds.b;
                 xhr.open('POST',url, true);
-                xhr.send(JSON.stringify(lats));
+                
             });
             google.maps.event.addListener(map,'zoom_changed',function(event) {
                 var bounds = map.getBounds();
                 var startPoint = bounds.getNorthEast();
                 var endPoint = bounds.getSouthWest();                
-                //alert('zoom '+startPoint+' '+endPoint);
+                console.log('zoom '+startPoint+' '+endPoint);
             });            
         }        
         function placeMarker(map,location) {
@@ -54,7 +53,7 @@
         }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAf3bmtGtC7RA_OERoqrSdKzLjmv-ZDHVk&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdHxkfIz_rAVikjZeCXthG-xUBMVNoFow&callback=initMap">
     </script>
   </body>
 </html>

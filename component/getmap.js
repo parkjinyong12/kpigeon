@@ -1,4 +1,4 @@
-var GetMap = {}
+var getMap = {}
 
 var express = require('express');
 var request = require('request');
@@ -8,38 +8,40 @@ var XMLHttpRequest = require('xhr2');
 
 var router = express.Router();
 
-GetMap.route = function() {      
+getMap.route = function() {
+
     router.post('/marker',function(req,res) {        
         var pool = mysql.getPool();
 
-        req.on('data',function(data) {
+        req.on('data',function(data) {            
             console.log(data);
         });        
         
+        //TODO from googleMap.html to getmap.js through url(/getmap/marker)
         var minlat = req.query.minlat;        
         var minlng = req.query.minlng;
         var maxlat = req.query.maxlat;        
         var maxlng = req.query.maxlng;
        
-        var tasks = [
-            function() {
-
-                pool.getConnection(function(err,connection){ 
-
-                    if(err) {                        
-                        console.log(err);
-                    }                
-                    var query = connection.query('select * from CardBusStatisticsServiceNew where id between ? and ?',[1,10],function (err, result) {
+        var tasks = [function() {
+            pool.getConnection(function(err,connection){ 
+                if(err) {                        
+                    console.log(err);
+                    connection.release();
+                } else {
+                    var query = connection.query('select * from CardBusStatisticsServiceNew where id between ? and ?',[1,10],function (err, result) {                                               
                         if (err) {
-                            connection.release();
                             console.error(err);    
-                            throw err;  
-                        }
-                        connection.release();                              
-                    });
-                });        
-            }
-        ];
+                            connection.release();                                
+                        } else {
+                            result.forEach(rowData => {
+                                console.log(rowData);                                    
+                            });
+                        }                           
+                    });        
+                }
+            });
+        }];
         async.waterfall(tasks, function(err, results) {
             console.log(results);        
         });
@@ -102,4 +104,4 @@ router.get('/insertBusRouteList',function(req,res) {
     res.send(200,'success');    
 });
 
-module.exports = GetMap;
+module.exports = getMap;
