@@ -1,9 +1,9 @@
 var service = {}
 require('date-utils');
 
-var express = require('express');
+var app = require('express');
 var path = require('path');
-var router = express.Router();
+var router = app.Router();
 
 var mysql = require('../db/mysql');
 
@@ -35,6 +35,9 @@ service.route = function() {
       console.log(query);
     });
     res.send('');
+  });
+  router.get('/getmap2',function(req,res) {
+    app.use('/getmap2',require('./service/getmap2').route());
   });
   return router;
 }
