@@ -5,11 +5,43 @@ var bithumb = require('./bithumb');
 var express = require('express');
 var request = require("request");
 var async = require('async');
-var mysql = require('../db/mysql');
+var mysql = require('../../db/mysql');
 
 var router = express.Router();
 
-Bitcoin.route = function() {  
+Bitcoin.route = function() {
+
+    router.get('/bitcoin',function(req,res) {
+        
+        var orin_price = req.query.orin_price;
+        var pool = mysql.getPool();
+    
+        pool.getConnection(function(err,connection){
+          var query = connection.query('select id, coin_type, price, date_format(reg_date, "%Y%m%d%h%i%s") as reg_date from price_history', function (err, rows) {
+              
+                if(err){                  
+                    console.log("check an error")
+                    //console.log(err);
+                    connection.release(); 
+                } else if(rows.length) { 
+                    rows.forEach(row => {
+                        if(row.coin_type == 'ETH') {
+                        console.log(row.reg_date);
+                        var date = new Date();    
+                        console.log(date.toFormat('YYYYMMDDHH24MISS'));
+                        }
+                    });
+                    connection.release();                
+                } else {
+                    console.log("Query didn't return any results.");
+                    connection.release();
+                }              
+                
+            });          
+        });
+        res.send('');
+    });
+
     router.get('/recordHistory',function(req,res) {    
    
         coin_type=req.query.coin;

@@ -28,7 +28,7 @@
             });
             google.maps.event.addListener(map, 'idle', function(event){
                 
-                url = '/getmap/marker'
+                url = '/service/getmap/marker'
                 xhr = new XMLHttpRequest();
                 var bounds = map.getBounds();
                
@@ -36,6 +36,7 @@
                 var lats = bounds.f;
                 var lngs = bounds.b;
                 xhr.open('POST',url, true);
+                xhr.send(JSON.stringify(lats));
                 
             });
             google.maps.event.addListener(map,'zoom_changed',function(event) {

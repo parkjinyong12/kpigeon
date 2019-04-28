@@ -1,44 +1,15 @@
 var service = {}
-require('date-utils');
 
-var app = require('express');
-var path = require('path');
-var router = app.Router();
+var express = require('express');
+var router = express.Router();
 
-var mysql = require('../db/mysql');
+// services
+var getmap = require('./service/getmap');
+var bitcoin = require('./service/bitcoin');
 
-service.route = function() {  
-  router.get('/bitcoin',function(req,res) {
-    var orin_price = req.query.orin_price;
-    var pool = mysql.getPool();
-
-    pool.getConnection(function(err,connection){
-      var query = connection.query('select id, coin_type, price, date_format(reg_date, "%Y%m%d%h%i%s") as reg_date from price_history', function (err, rows) {
-          if(err){
-            connection.release();
-            console.log(err);
-            throw err;
-          } else if(rows.length) {            
-          } else {
-            console.log("Query didn't return any results.");
-          }
-          rows.forEach(row => {
-            if(row.coin_type == 'ETH') {
-              console.log(row.reg_date);
-              var date = new Date();    
-              console.log(date.toFormat('YYYYMMDDHH24MISS'));
-            }
-          });
-          connection.release();
-          console.log("release");
-      });
-      console.log(query);
-    });
-    res.send('');
-  });
-  router.get('/getmap2',function(req,res) {
-    app.use('/getmap2',require('./service/getmap2').route());
-  });
+service.route = function(app) {  
+  app.use('/service/getmap',getmap.route(app));
+  app.use('/service/bitcoin',bitcoin.route(app));
   return router;
 }
 
