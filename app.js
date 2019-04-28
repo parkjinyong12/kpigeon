@@ -1,55 +1,33 @@
-/* Module */
+// import
 var http = require('http');
 var express = require('express');
 var path = require('path');
-var bodyParser = require('body-parser');
-var multer = require('multer');
 var app = express();
 
+// setting
 app.set('port',process.env.PORT || 23000);
 app.set('view engine','jade');
 app.set('views',path.join(__dirname,'/views'));
 app.locals.basedir = app.get('views');
 
-// parse application/x-www-form-urlencoded
-//app.use(bodyParser.urlencoded({ extended: false }))
-
-// parse application/json
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(multer());
-/*
-app.all('/*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-});
-*/
-
-/* Resources */
+// resource
 app.use('/js',express.static(path.join(__dirname,'/public/js')));
 app.use('/css',express.static(path.join(__dirname,'/public/css')));
 app.use('/video',express.static(path.join(__dirname,'/public/video')));
 app.use('/img',express.static(path.join(__dirname,'/public/image')));
 
-/* Process */
-//var business = require('./business/business');
-//var service = require('./business/service');
-//var screen = require('./business/screen');
+// controller
+app.use('/screen',require('./component/screen').route());
 
-//app.use('/business',business.route());
-//app.use('/service',service.route());
-//
-app.use('/screen',require('./business/screen').route());
-app.use('/bitcoin',require('./business/bitcoin').route());
+// service
+app.use('/service',require('./component/service').route());
 
-// bus Map maker loding
-app.use('/getmap',require('./business/getmap').route());
+app.use('/getmap',require('./component/getmap').route());
+app.use('/bitcoin',require('./component/bitcoin').route());
 
-
-/* Express Server Starting */
+// Express Server Start
 http.createServer(app).listen(app.get('port'), function() {
-    console.log('익스프레스 서버를 시작했습니다(개발) : ' + app.get('port'));
+    console.log('start server. port : ' + app.get('port'));
 });
 
 

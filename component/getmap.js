@@ -9,26 +9,23 @@ var XMLHttpRequest = require('xhr2');
 var router = express.Router();
 
 GetMap.route = function() {      
-    router.post('/marker',function(req,res) {
-        console.log(2);
+    router.post('/marker',function(req,res) {        
         var pool = mysql.getPool();
-        console.log(req.body);       
+
         req.on('data',function(data) {
             console.log(data);
         });        
-        console.log(3);
+        
         var minlat = req.query.minlat;        
         var minlng = req.query.minlng;
         var maxlat = req.query.maxlat;        
         var maxlng = req.query.maxlng;
-        console.log(minlat);
-        console.log(minlng);
-        console.log(maxlat);
-        console.log(maxlng);
-        console.log(1);
+       
         var tasks = [
             function() {
+
                 pool.getConnection(function(err,connection){ 
+
                     if(err) {                        
                         console.log(err);
                     }                
@@ -37,8 +34,7 @@ GetMap.route = function() {
                             connection.release();
                             console.error(err);    
                             throw err;  
-                        }                    
-                        console.log(result[2]);    
+                        }
                         connection.release();                              
                     });
                 });        

@@ -1,4 +1,4 @@
-var Service = {}
+var service = {}
 require('date-utils');
 
 var express = require('express');
@@ -7,7 +7,7 @@ var router = express.Router();
 
 var mysql = require('../db/mysql');
 
-Service.route = function() {  
+service.route = function() {  
   router.get('/bitcoin',function(req,res) {
     var orin_price = req.query.orin_price;
     var pool = mysql.getPool();
@@ -39,6 +39,6 @@ Service.route = function() {
   return router;
 }
 
-module.exports = Service;
+module.exports = service;
 
 
