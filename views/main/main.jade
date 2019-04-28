@@ -3,14 +3,13 @@ html(lang='en')
     head
         meta(charset='utf-8')       
         meta(http-equiv='X-UA-Compatible', content='IE=edge')        
-        meta(name='viewport', content='width=device-width, initial-scale=1')
-        // The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+        meta(name='viewport', content='width=device-width, initial-scale=1')        
        
         title K-Pigeon        
         include /common/header 
 
-        link(href='/css/style.css', rel='stylesheet')
-        script(src='/js/views/main.js')       
+        link(href='/css/views/main/main.css', rel='stylesheet')
+        script(src='/js/views/main/main.js')       
     
     body
         nav.navbar.navbar-inverse
@@ -67,20 +66,17 @@ html(lang='en')
                             ul.dropdown-menu
                                 li                                    
                                     a.lang(href='#' style='display:inline-block;') 
-                                        span Korean
-                                        img(src='/img/heart_spot_small_on.png',style="width:30px;")
+                                        span Korean                                        
                                 li                                  
                                     a.lang(href='#' style='display:inline-block;') 
-                                        span English
-                                        img(src='/img/heart_spot_small_on.png',style="width:30px;")
+                                        span English                                        
                                 li                                    
                                     a.lang(href='#' style='display:inline-block;') 
-                                        span Chinese
-                                        img(src='/img/heart_spot_small_on.png',style="width:30px;")
+                                        span Chinese                                        
                                 li
                                     a.lang(href='#' style='display:inline-block;') 
                                         span Japanese
-                                        img(src='/img/heart_spot_small_on.png',style="width:30px;")
+                                                                                
         .container-fluid.main
             .row
                 .col-sm-5.col-md-5.col-sm-offset-_5.col-md-offset-_5.korea-map                     

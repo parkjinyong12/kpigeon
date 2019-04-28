@@ -21,9 +21,9 @@ screen.route = function() {
     res.sendFile(path.join(__dirname,'../views/sub/googleMap.html'));
   });
 
-  // sub
-  router.get('/test',function(req,res) {
-    res.sendFile(path.join(__dirname,'../views/sub/test.html'))
+  // navbar sample
+  router.get('/navbar',function(req,res) {
+    res.sendFile(path.join(__dirname,'../views/sub/navbar.html'));
   });
   
   return router;
