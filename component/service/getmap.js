@@ -1,4 +1,4 @@
-var getMap = {}
+var getmap = {}
 
 var express = require('express');
 var request = require('request');
@@ -8,7 +8,7 @@ var XMLHttpRequest = require('xhr2');
 
 var router = express.Router();
 
-getMap.route = function() {
+getmap.route = function() {
 
     router.get("/marker2",function(req,res) {
         console.log("test");
@@ -110,4 +110,4 @@ getMap.route = function() {
 }
 
 
-module.exports = getMap;
+module.exports = getmap;

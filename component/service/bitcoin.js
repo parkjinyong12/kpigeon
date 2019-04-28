@@ -1,4 +1,4 @@
-var Bitcoin = {}
+var bitcoin = {}
 
 require('date-utils');
 var bithumb = require('./bithumb');
@@ -9,7 +9,7 @@ var mysql = require('../../db/mysql');
 
 var router = express.Router();
 
-Bitcoin.route = function() {
+bitcoin.route = function() {
 
     router.get('/bitcoin',function(req,res) {
         
@@ -235,4 +235,4 @@ Bitcoin.route = function() {
     return router;
 }
 
-module.exports = Bitcoin;
+module.exports = bitcoin;
