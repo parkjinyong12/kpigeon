@@ -16,14 +16,9 @@ app.use('/css',express.static(path.join(__dirname,'/public/css')));
 app.use('/video',express.static(path.join(__dirname,'/public/video')));
 app.use('/img',express.static(path.join(__dirname,'/public/image')));
 
-// controller
+// component
 app.use('/screen',require('./component/screen').route(app));
-
-// service
 app.use('/service',require('./component/service').route(app));
-
-app.use('/getmap',require('./component/service/getmap').route(app));
-app.use('/bitcoin',require('./component/service/bitcoin').route(app));
 
 // Express Server Start
 http.createServer(app).listen(app.get('port'), function() {
